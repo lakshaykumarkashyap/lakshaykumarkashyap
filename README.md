@@ -36,7 +36,7 @@ Creativity fuels my tech—tech fuels my creativity.
 ---
 
 ## 📫 **Connect With Me**
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=vercel&logoColor=white)](https://myluckycharm.my.canva.site/)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=vercel&logoColor=white)]([https://myluckycharm.my.canva.site/](https://lakshaykumarkashyap.my.canva.site/))
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/LakshayKumar9347)
 [![github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LakshayKumar9347)
 
