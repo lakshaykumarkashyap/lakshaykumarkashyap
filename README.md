@@ -1,46 +1,95 @@
-# 👋 Hi, I'm **Lakshay Kumar Kashyap**
-### **MERN Stack Developer • AI Workflow Builder • Multifaceted Musician 🎼**  
-Crafting scalable web solutions while blending logic with creativity.
+<!-- Lakshay Kumar Kashyap | Minimal & Professional GitHub Profile -->
+
+<!-- Hero Section -->
+
+
+<h1 align="left">👋 Hi, I'm <b>Lakshay Kumar Kashyap</b></h1>
+<h3 align="left">Full Stack MERN Developer | AI Workflow Builder | Musician</h3>
+
+<p align="left">
+  <a href="mailto:lakshaykumarkashyap.work@protonmail.com">📧 lakshaykumarkashyap.work@protonmail.com</a> • 
+  <a href="https://www.linkedin.com/in/lakshaykumarkashyap/">LinkedIn</a> • 
+  <a href="https://www.instagram.com/lakshaykumar.kashyap/">Instagram</a> • 
+  <a href="https://lakshaykumarkashyap.my.canva.site/">Portfolio</a>
+</p>
+
+
+<p align="left">
+  <img src="https://github.com/LakshayKumar9347/LakshayKumar9347/blob/7996d8ee1d53a8420795d56e401f9f9a191d4b3e/new-pic.png" style="border-radius:8px; object-fit:cover;" alt="Lakshay Kumar Kashyap">
+</p>
 
 ---
 
-## 🚀 **About Me**
-![Profile Banner](https://github.com/LakshayKumar9347/LakshayKumar9347/blob/7996d8ee1d53a8420795d56e401f9f9a191d4b3e/new-pic.png)
+### 👨‍💻 About Me
+I’m a **Full Stack Developer (MERN)** with hands-on experience designing, developing, and deploying scalable web applications.  
+I focus on building **modern, secure, and performance-oriented** products using cutting-edge technologies.
 
-I'm a passionate **Full-Stack MERN Developer** with experience building modern, performant, and production-ready applications.  
-Alongside tech, I'm also a **musician**, bringing creativity, rhythm, and expression into everything I build.
-
-I enjoy working with:
-- JavaScript & TypeScript  
-- MERN Stack (MongoDB, Express, React, Node)  
-- API Integrations (Fyers, Gemini AI, etc.)  
-- Frontend UI/UX using Tailwind CSS, Vite, and Modern React Patterns  
-- AI-driven workflows & automation  
+I enjoy transforming **ideas into functional, elegant digital experiences** — merging my love for technology and creativity.  
+Outside of coding, you’ll often find me exploring **music production** or experimenting with **flute, guitar, and keyboard** to create something soulful. 🎵
 
 ---
 
-## 💡 **Skills & Technologies**
-**Frontend:** React.js, Vite, Tailwind CSS, TypeScript  
-**Backend:** Node.js, Express.js, REST APIs  
+### ⚙️ Skills & Technologies
+
+**Frontend:** React.js, Next.js, Redux, Tailwind CSS, TypeScript, HTML5, CSS3  
+**Backend:** Node.js, Express.js, Nest.js, REST APIs, Socket.io  
 **Database:** MongoDB, Mongoose  
-**Tools:** Git, GitHub, Postman, VS Code  
-**AI & Automation:** Gemini API, AI workflow creation  
-**Others:** React Native (Basic), FlutterFlow (Basic), NestJS (Basic)
+**DevOps & Tools:** Git, GitHub, Docker, VS Code, Postman, AWS Basics  
+**Others:** AI Workflow Automation, Gemini AI, WordPress CMS, Cybersecurity  
 
 ---
 
-## 🎧 **Beyond Code**
-When I'm not writing code, I'm creating music, experimenting with melodies, or improving my audio production workflow.  
-Creativity fuels my tech—tech fuels my creativity.
+### 🧠 Professional Highlights
+
+- 💼 **Full Stack Developer** (1+ Year Experience)  
+  Building scalable web apps, managing client projects, and implementing DevOps workflows.  
+
+- 🔐 **Cybersecurity Diploma (6 Months)**   
+  Gained expertise in website & server security, malware protection, and vulnerability analysis.  
+
+- 🎓 **B.Tech in Computer Science (2021–2025)** — IKGPTU Mohali Campus-1  
+
+- 🏆 **Achievements:**  
+  - Lead developer of “**Busease**” — React Native Bus Booking App  
+  - Built AI-powered career consultation platform  
+  - Created a stock market analysis tool using live APIs  
+  - Runner-up in **Chess Tournament** and performed at *Melodiosa Season 6* as Lead Guitarist  
 
 ---
 
-## 📫 **Connect With Me**
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=vercel&logoColor=white)]([https://myluckycharm.my.canva.site/](https://lakshaykumarkashyap.my.canva.site/))
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/LakshayKumar9347)
-[![github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LakshayKumar9347)
+### 🧩 Featured Projects
+
+**Stock Market Option Data Analysis Tool**  
+Real-time stock analysis platform using **Socket.io** + **Fyers API** for live market data visualization.
+
+**AI Career Consultation Platform**  
+AI-powered platform with **Gemini AI**, ATS-based resume analysis, and automated email workflows.
+
+**Ask Me Quick — Business Discovery Platform**  
+Local business directory allowing professionals to create searchable, verified business profiles.
+
+**Busease — React Native App**  
+Bus booking and route tracking app built with **React Native** and **Node.js** for college major project.
 
 ---
 
-⭐ **Thanks for visiting!**  
-Feel free to explore my repositories or connect for collaborations.
+### 🎧 Beyond Code
+Music keeps me inspired and creative. I play **Guitar**, **Flute**, and **Keyboard**, and often mix melodies in my free time.  
+I believe in balancing logic and art — because the best developers are also creators at heart.
+
+> “Code is rhythm, and rhythm is code — both need structure, flow, and harmony.”
+
+---
+
+### 📫 Connect With Me
+- 💼 [LinkedIn](https://www.linkedin.com/in/lakshaykumarkashyap/)  
+- 🌐 [Portfolio](https://lakshaykumarkashyap.my.canva.site/)  
+- 📧 [Email](mailto:lakshaykumarkashyap.work@protonmail.com)  
+- 🧠 [Instagram](https://www.instagram.com/lakshaykumar.kashyap/)
+
+---
+
+<p align="center">
+  <i>Crafted with 💙 by <b>Lakshay Kumar Kashyap</b></i><br>
+  © 2025 | Full Stack Developer • MERN • AI • Music
+</p>
