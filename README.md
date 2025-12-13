@@ -15,7 +15,7 @@
 
 
 <p align="left">
-  <img src="https://github.com/LakshayKumar9347/LakshayKumar9347/blob/7996d8ee1d53a8420795d56e401f9f9a191d4b3e/new-pic.png" style="border-radius:8px; object-fit:cover;" alt="Lakshay Kumar Kashyap">
+  <img src="https://github.com/lakshaykumarkashyap/lakshaykumarkashyap/blob/3a0d4910da1b68112eaeb29f3870fa9bb9893ae2/new-pic-cropped.png" style="border-radius:8px; object-fit:cover;" alt="Lakshay Kumar Kashyap">
 </p>
 
 ---
