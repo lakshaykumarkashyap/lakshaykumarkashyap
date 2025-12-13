@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume - Lakshay Kumar Kashyap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        /* Psychological Color Palette based on Chess Image:
+               Deep Forest Green: Stability, Strategy, Growth (From leather chairs)
+               Warm Bronze/Amber: Energy, Premium feel (From wood/lighting)
+            */
+        --primary-dark: #1a3c34; /* Deep Forest Green */
+        --primary-light: #2e5c55; /* Muted Sage Green */
+        --accent: #d98324; /* Warm Bronze/Amber */
+        --accent-hover: #b56d1d;
+        --bg-gray: #f9f8f4; /* Warm Ivory tint */
+        --text-dark: #1c1c1e;
+        --text-muted: #57534e; /* Warm Stone Gray */
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #e6e5df;
+        color: var(--text-dark);
+        line-height: 1.6;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Layout */
+      .page-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background: var(--white);
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        box-shadow: 0 15px 35px rgba(26, 60, 52, 0.15); /* Green tinted shadow */
+        /* min-height: 1100px; */
+        height: 100%;
+      }
+
+      /* Sidebar (Left Column) */
+      .sidebar {
+        background-color: var(--primary-dark);
+        color: var(--white);
+        padding: 40px 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .profile-img-container {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+        border-radius: 50%;
+        border: 4px solid var(--accent);
+        overflow: hidden;
+        background-color: var(--white);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .contact-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 0.9rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #e2e8f0; /* Soft white for contrast */
+        text-decoration: none;
+        transition: color 0.2s, transform 0.2s;
+      }
+
+      .contact-item:hover {
+        color: var(--accent);
+        transform: translateX(3px);
+      }
+
+      .contact-item i {
+        width: 20px;
+        color: var(--accent);
+        text-align: center;
+      }
+
+      .section-title-sidebar {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      .skill-group {
+        margin-bottom: 20px;
+      }
+
+      .skill-group h4 {
+        color: var(--accent);
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        color: #f0fdf4;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      /* Main Content (Right Column) */
+      .main-content {
+        padding: 40px;
+        background-color: var(--white);
+      }
+
+      header {
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--primary-dark);
+        line-height: 1.2;
+      }
+
+      .job-title {
+        font-size: 0.91rem;
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-top: 10px;
+        display: inline-block;
+        background: var(--bg-gray);
+        padding: 2px 10px;
+        border-radius: 4px;
+      }
+
+      .summary {
+        color: var(--text-muted);
+        margin-top: 15px;
+        font-size: 0.95rem;
+      }
+
+      .section-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.3rem;
+        color: var(--primary-dark);
+        border-left: 5px solid var(--accent);
+        padding-left: 15px;
+        margin: 35px 0 20px 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Experience Timeline */
+      .experience-item {
+        position: relative;
+        padding-left: 20px;
+        border-left: 2px solid #e5e7eb;
+        margin-bottom: 25px;
+      }
+
+      .experience-item::before {
+        content: "";
+        position: absolute;
+        left: -6px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        background: var(--accent);
+        border-radius: 50%;
+        box-shadow: 0 0 0 3px #fff; /* White ring effect */
+      }
+
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 5px;
+      }
+
+      .exp-role {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--primary-dark);
+      }
+
+      .exp-company {
+        color: var(--accent-hover);
+        font-weight: 600;
+      }
+
+      .exp-date {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        background: var(--bg-gray);
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+
+      .exp-details {
+        list-style: none;
+        margin-top: 10px;
+      }
+
+      .exp-details li {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .exp-details li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: bold;
+        font-size: 1.2rem;
+        line-height: 1rem;
+      }
+
+      /* Projects Grid */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .project-card {
+        background: var(--white);
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+        transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Subtle accent bar on top of cards */
+      .project-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--accent);
+        opacity: 0.5;
+        transition: opacity 0.2s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(26, 60, 52, 0.08);
+        border-color: var(--accent);
+      }
+
+      .project-card:hover::after {
+        opacity: 1;
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .project-title {
+        font-weight: 700;
+        color: var(--primary-dark);
+      }
+
+      .project-tech {
+        font-size: 0.75rem;
+        color: var(--accent-hover);
+        font-weight: 600;
+        background: var(--bg-gray);
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+
+      .project-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+      }
+
+      .project-impact {
+        font-size: 0.85rem;
+        font-style: italic;
+        color: #78716c;
+        border-top: 1px dashed #d6d3d1;
+        padding-top: 8px;
+      }
+
+      /* Education & Certs (In Sidebar for layout balance) */
+      .edu-item {
+        margin-bottom: 15px;
+      }
+
+      .edu-degree {
+        font-weight: 600;
+        color: var(--white);
+        font-size: 0.95rem;
+      }
+
+      .edu-school {
+        color: var(--accent);
+        font-size: 0.85rem;
+      }
+
+      .edu-year {
+        color: #d1d5db;
+        font-size: 0.8rem;
+      }
+
+      /* Responsive & Print */
+      @media screen and (max-width: 768px) {
+        .page-container {
+          grid-template-columns: 1fr;
+          margin: 0;
+          width: 100%;
+        }
+        .sidebar {
+          padding: 30px;
+        }
+        .main-content {
+          padding: 30px;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+        .page-container {
+          margin: 0;
+          box-shadow: none;
+          width: 100%;
+          max-width: 100%;
+          grid-template-columns: 280px 1fr; /* Maintain ratio */
+        }
+        .sidebar {
+          background-color: var(--primary-dark) !important;
+          -webkit-print-color-adjust: exact;
+        }
+        .project-card {
+          break-inside: avoid;
+          border: 1px solid #ccc; /* Ensure borders show in print */
+        }
+        /* Hide print instructions or unnecessary visual fluff if needed */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar">
+        <div class="profile-img-container">
+          <!-- Using the raw version of the GitHub link provided -->
+          <img
+            src="https://raw.githubusercontent.com/lakshaykumarkashyap/lakshaykumarkashyap/0574ad0d76020975c782c4236820b8f5227a20cc/new-pic-cropped.png"
+            alt="Lakshay Kumar Kashyap"
+            class="profile-img"
+          />
+        </div>
+
+        <!-- Contact -->
+        <div class="contact-section">
+          <div class="section-title-sidebar">Contact</div>
+          <a
+            href="mailto:lakshaykumarkashyap.work@protonmail.com"
+            class="contact-item"
+          >
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email Me</span>
+          </a>
+          <a href="tel:+916239484065" class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91-6239484065</span>
+          </a>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Mohali, Punjab, India</span>
+          </div>
+          <!-- Adding placeholders for links since user said "LinkedIn | GitHub" but provided generic text -->
+          <a
+            href="https://www.linkedin.com/in/lakshaykumarkashyap/"
+            class="contact-item"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn Profile</span>
+          </a>
+          <a href="https://github.com/lakshaykumarkashyap" class="contact-item">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub Profile</span>
+          </a>
+          <a
+            href="https://lakshaykumarkashyap.my.canva.site/"
+            class="contact-item"
+          >
+            <i class="fa-solid fa-globe"></i>
+            <span>Portfolio Website</span>
+          </a>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <div class="section-title-sidebar">Education</div>
+          <div class="edu-item">
+            <div class="edu-degree">B.Tech (Computer Science)</div>
+            <div class="edu-school">IKGPTU Mohali Campus-1</div>
+            <div class="edu-year">2021 – 2025</div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div>
+          <div class="section-title-sidebar">Technical Skills</div>
+
+          <div class="skill-group">
+            <h4>Frontend</h4>
+            <div class="tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Ant Design</span>
+              <span class="tag">Figma</span>
+              <span class="tag">UI/UX Optimization</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4>Backend</h4>
+            <div class="tags">
+              <span class="tag">Express.js</span>
+              <span class="tag">Nest.js</span>
+              <span class="tag">API Architecture</span>
+              <span class="tag">Supabse</span>
+              <span class="tag">Server Hardening</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4>Database & Tools</h4>
+            <div class="tags">
+              <span class="tag">MongoDB</span>
+              <span class="tag">Cloud Databases</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Cloud Deployment</span>
+              <span class="tag">Git/GitHub</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Key Strengths</h4>
+            <div class="tags">
+              <span class="tag">Analytical Thinking</span>
+              <span class="tag">Adaptability</span>
+              <span class="tag">Problem Solving</span>
+              <span class="tag">Attention to Detail</span>
+              <span class="tag">Team Collaboration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div>
+          <div class="section-title-sidebar">Certifications</div>
+          <div class="edu-item">
+            <div class="edu-degree">Certification in Cybersecurity</div>
+            <div class="edu-school">Solitaire Infosys</div>
+            <div class="edu-year">6 Months</div>
+            <p style="font-size: 0.8rem; color: #d1d5db; margin-top: 5px">
+              Web Security, Malware protection, and Vulnerabilities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Personal Details -->
+        <div>
+          <div class="section-title-sidebar">Details</div>
+          <div style="font-size: 0.85rem; color: #d1d5db">
+            <p><strong>Languages:</strong> English, Hindi, Punjabi</p>
+            <p style="margin-top: 5px"><strong>DOB:</strong> 5th Dec 2003</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <header>
+          <h1>Lakshay Kumar Kashyap</h1>
+          <div class="job-title">
+            Full Stack Developer (MERN) | Backend Architecture & Modern UI
+            Design
+          </div>
+          <div class="section-title">Professional Summary</div>
+
+          <p class="summary">
+            Dedicated and detail-oriented Full Stack Developer with 1 year of
+            professional experience building scalable web applications using
+            React.js, Next.js, Node.js, and TypeScript. Adept at designing
+            efficient backend systems, secure APIs, and modern UIs. Passionate
+            about continuous learning, creative problem-solving, and delivering
+            impactful solutions that bridge innovation with reliability.
+          </p>
+          <!-- <p class="summary" style="margin-top: 10px">
+            I focus on developing user-centric, performance-driven products
+            emphasizing clean architecture, microservices, and cloud readiness.
+            I thrive in environments that encourage innovation, teamwork, and
+            technical exploration — continuously improving systems and pushing
+            code that truly matters. Beyond coding, I bring creativity from my
+            passion for music, blending art and logic to craft elegant digital
+            experiences.
+          </p> -->
+        </header>
+
+        <!-- Professional Experience -->
+        <section>
+          <div class="section-title">Professional Experience</div>
+
+          <div class="experience-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Full Stack Developer</div>
+                <div class="exp-company">RG STARTUP Web Solutions</div>
+              </div>
+              <div class="exp-date">Feb 2025 – Jan 2026</div>
+            </div>
+            <ul class="exp-details">
+              <li>
+                Developed modern, high-performance applications using MERN
+                Stack, Next.js, Nest.js, and TypeScript.
+              </li>
+              <li>
+                Contributed to microservices-based architectures and Dockerized
+                applications for scalability.
+              </li>
+              <li>
+                Enhanced company projects by implementing DevOps best practices
+                and secure coding standards.
+              </li>
+              <li>
+                Improved project delivery speed by 30% through reusable
+                components and CI/CD optimization.
+              </li>
+              <li>
+                Direct client collaboration to gather requirements and ensure
+                timely delivery.
+              </li>
+              <li>
+                Explored AI workflow automation and integrated Gemini AI for
+                enhanced user automation and predictive data features.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section>
+          <div class="section-title">Key Projects</div>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-header">
+                <div class="project-title">
+                  Fyers Live Option Insight Engine
+                </div>
+                <span class="project-tech">Socket.io, Fyers API</span>
+              </div>
+              <div class="project-desc">
+                Real-time stock market option data analysis tool integrating
+                dynamic visualization, socket streaming, and analysis formulas.
+              </div>
+              <div class="project-impact">
+                Impact: Helped traders make instant data-driven trading
+                decisions.
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <div class="project-title">
+                  Jobish - AI Career Consultation Platform
+                </div>
+                <span class="project-tech">Next.js, Gemini AI</span>
+              </div>
+              <div class="project-desc">
+                AI-powered platform for career consultation. Implemented ATS
+                Resume Analysis, Gemini AI workflow automation, and Razorpay
+                integration.
+              </div>
+              <div class="project-impact">
+                Impact: Boosted conversions via automation and personalized UX.
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <div class="project-title">
+                  Ask Me Quick - Business Discovery Platform
+                </div>
+                <span class="project-tech">Next.js & Supabase</span>
+              </div>
+              <div class="project-desc">
+                Local business directory where professionals can create digital
+                profiles, manage services, and enhance business visibility.
+              </div>
+              <div class="project-impact">
+                Result: Increased local discoverability and engagement by 45%.
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <div class="project-title">
+                  Digital Marketing Profile - Personal Branding Website
+                </div>
+                <span class="project-tech">Next.js + Headless WP</span>
+              </div>
+              <div class="project-desc">
+                SEO-optimized personal branding website with interactive
+                animations and blog CMS using headless WordPress.
+              </div>
+              <div class="project-impact">
+                Result: Strengthened client’s online presence and lead
+                generation.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Expanded About Me / Technical Summary -->
+        <section>
+          <div class="section-title">More About Me</div>
+          <p class="summary">
+            I believe development is not just about writing code, but about
+            creating experiences that are intuitive, fast, and reliable. I am a
+            strong advocate of clean, maintainable code and agile development
+            practices. My expertise spans across building RESTful APIs,
+            optimizing database performance, and deploying containerized
+            applications using Docker.
+          </p>
+          <p class="summary" style="margin-top: 10px">
+            Outside of tech, I am passionate about music and creative arts —
+            playing the <strong>Guitar</strong>, <strong>Flute</strong>, and
+            <strong>Keyboard</strong> allows me to stay inspired and think
+            creatively even when approaching complex technical problems. I also
+            enjoy mentoring aspiring developers, exploring DevOps automation
+            pipelines, and contributing to open-source communities.
+          </p>
+        </section>
+
+        <!-- Achievements -->
+        <section>
+          <div class="section-title">Achievements & Interests</div>
+          <ul class="exp-details">
+            <li>
+              <strong>Professional Musician:</strong> Lead Guitarist; performed
+              at 5+ events and inter-school music competitions (Melodiosa Season
+              6).
+            </li>
+            <li>
+              <strong>Chess Runner-up:</strong> Achieved 2nd position in
+              inter-school competition; improved strategic thinking and focus
+              under pressure.
+            </li>
+            <li>
+              <strong>Self-Learning:</strong> Passionate about AI automation,
+              software security, and modern DevOps pipelines.
+            </li>
+            <li>
+              <strong>Major College Project:</strong> Led 3-member team on
+              “Busease” app; achieved 95% feature completion and positive
+              faculty review.
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
