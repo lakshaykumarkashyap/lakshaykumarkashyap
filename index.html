@@ -13,8 +13,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Added EB Garamond for that Ivy League Academic Look -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -25,14 +26,11 @@
     <style>
       :root {
         /* Preserved Psychological Color Palette */
-        --primary-dark: #1a3c34; /* Deep Forest Green */
-        --primary-light: #244b42; /* Slightly lighter green for gradients */
-        --accent: #d98324; /* Warm Bronze/Amber */
-        --accent-hover: #b56d1d;
-        --bg-body: #e6e5df;
+        --primary-dark: #1a3c34; /* Deep Forest Green - Used for Text/Headers */
+        --primary-light: #244b42;
+        --accent: #d98324; /* Warm Bronze/Amber - Used sparingly for emphasis */
         --bg-white: #ffffff;
-        --text-dark: #1c1c1e;
-        --text-muted: #64748b;
+        --text-dark: #0f172a;
         --border-light: #e2e8f0;
       }
 
@@ -43,680 +41,422 @@
       }
 
       body {
-        font-family: "Inter", sans-serif;
-        background-color: var(--bg-body);
-        color: var(--text-dark);
-        line-height: 1.65;
+        /* Garamond is the gold standard for academic/Harvard resumes */
+        font-family: "EB Garamond", serif;
+        background-color: #f9f9f9; /* Very light gray background for the webpage */
+        color: #000;
+        line-height: 1.5;
+        font-size: 16px;
         -webkit-font-smoothing: antialiased;
+        padding: 40px 20px;
       }
 
-      /* 10x Design: Modern Floating Layout */
+      /* Harvard Layout: Single Column, Centered, White Paper */
       .page-container {
-        max-width: 1050px;
-        margin: 50px auto;
-        background: var(--bg-white);
-        display: grid;
-        grid-template-columns: 320px 1fr;
-        border-radius: 20px; /* Modern rounded corners */
-        overflow: hidden; /* Clips content to corners */
-        box-shadow: 0 25px 50px -12px rgba(26, 60, 52, 0.25); /* Softer, deeper shadow */
-        min-height: 90vh;
-      }
-
-      /* --- LEFT SIDEBAR DESIGN --- */
-      .sidebar {
-        background: linear-gradient(
-          180deg,
-          var(--primary-dark) 0%,
-          var(--primary-light) 100%
-        );
-        color: var(--bg-white);
-        padding: 50px 35px;
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-        position: relative;
-      }
-
-      .profile-img-container {
-        width: 150px;
-        height: 150px;
+        max-width: 850px; /* Standard A4 width proportions */
         margin: 0 auto;
-        border-radius: 50%;
-        border: 3px solid var(--accent);
-        padding: 3px; /* Creates a gap between border and image */
-        background-color: transparent;
+        background: var(--bg-white);
+        padding: 60px 70px; /* Generous margins */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        min-height: 100vh;
+      }
+
+      /* --- HEADER SECTION --- */
+      header {
+        text-align: center;
+        margin-bottom: 25px;
+        border-bottom: none;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 15px;
       }
 
       .profile-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
-        background-color: var(--bg-white);
-      }
-
-      /* Redesigned Download Button (Fixed Style as requested) */
-      .download-btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-        background: var(--accent); /* Permanent Accent Color */
-        color: var(--bg-white); /* Permanent White Text */
-        border: 1px solid var(--accent);
-        padding: 12px 0;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.95rem;
-        transition: all 0.3s ease;
-        margin-top: -15px;
-        box-shadow: 0 4px 12px rgba(217, 131, 36, 0.3); /* Subtle glow */
-      }
-
-      .download-btn:hover {
-        background: var(--accent-hover);
-        border-color: var(--accent-hover);
-        transform: translateY(-2px);
-      }
-
-      .section-title-sidebar {
-        font-family: "Poppins", sans-serif;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: rgba(255, 255, 255, 0.6);
-        margin-bottom: 15px;
-        font-weight: 600;
-      }
-
-      .contact-section {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        color: #f1f5f9;
-        text-decoration: none;
-        font-size: 0.9rem;
-        transition: transform 0.2s;
-      }
-
-      .contact-item:hover {
-        color: var(--accent);
-        transform: translateX(5px);
-      }
-
-      .contact-item i {
-        width: 18px;
-        color: var(--accent);
-        font-size: 1rem;
-      }
-
-      /* Tags with Glass Effect */
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .tag {
-        background: rgba(255, 255, 255, 0.08);
-        padding: 5px 12px;
-        border-radius: 6px;
-        font-size: 0.78rem;
-        color: #e2e8f0;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: background 0.2s;
-      }
-
-      .tag:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: var(--accent);
-      }
-
-      .skill-group h4 {
-        color: var(--accent);
-        font-size: 0.9rem;
-        margin-bottom: 8px;
-        font-weight: 600;
-      }
-
-      .edu-item {
-        margin-bottom: 20px;
-        padding-left: 15px;
-        border-left: 2px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .edu-degree {
-        font-weight: 600;
-        font-size: 0.95rem;
-        color: #fff;
-      }
-
-      .edu-school {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.85rem;
-      }
-
-      /* --- MAIN CONTENT DESIGN --- */
-      .main-content {
-        padding: 60px 50px;
-        background-color: var(--bg-white);
-      }
-
-      header {
-        margin-bottom: 45px;
-        border-bottom: 1px solid var(--border-light);
-        padding-bottom: 30px;
+        object-fit: cover;
+        border: 2px solid var(--primary-dark);
       }
 
       h1 {
-        font-family: "Poppins", sans-serif;
-        font-size: 2.2rem; /* Crisp, slightly smaller */
+        font-family: "EB Garamond", serif;
+        font-size: 2.4rem;
         font-weight: 700;
         color: var(--primary-dark);
-        line-height: 1.1;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
 
       .job-title {
-        font-family: "Inter", sans-serif;
-        font-size: 0.95rem;
-        font-weight: 600;
+        font-family: "Inter", sans-serif; /* Sans-serif for contrast */
+        font-size: 0.9rem;
         color: var(--accent);
         text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 20px;
-        display: inline-block;
+        letter-spacing: 1.5px;
+        font-weight: 500;
+        margin-bottom: 12px;
+        display: block;
       }
 
-      .summary {
-        color: var(--text-muted);
-        font-size: 1rem;
-        max-width: 95%;
+      .contact-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.85rem;
+        color: #444;
+      }
+
+      .contact-item {
+        color: #444;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      
+      .contact-item:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+
+      .separator {
+        color: var(--accent);
+      }
+
+      /* --- SECTION STYLING (The "Harvard" Look) --- */
+      section {
+        margin-bottom: 25px;
       }
 
       .section-title {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.1rem;
-        color: var(--primary-dark);
+        font-family: "Inter", sans-serif;
+        font-size: 0.85rem;
         font-weight: 700;
+        color: var(--primary-dark);
         text-transform: uppercase;
-        letter-spacing: 1.2px;
-        margin: 40px 0 25px 0;
+        letter-spacing: 1px;
+        border-bottom: 1px solid var(--primary-dark);
+        padding-bottom: 4px;
+        margin-bottom: 15px;
+      }
+
+      /* --- EDUCATION (Moved to Top as per Academic Standard) --- */
+      .edu-block {
         display: flex;
-        align-items: center;
-        gap: 12px;
+        justify-content: space-between;
+        margin-bottom: 8px;
       }
 
-      /* Decorative line after title */
-      .section-title::after {
-        content: "";
-        flex: 1;
-        height: 2px;
-        background: #f1f5f9;
+      .edu-school {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #000;
       }
 
-      /* Experience Design */
-      .experience-item {
-        margin-bottom: 35px;
+      .edu-details {
+        font-style: italic;
+        color: #333;
+      }
+
+      .edu-date {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        color: #000;
+      }
+
+      /* --- SKILLS (Text-based lists, no pills) --- */
+      .skills-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .skill-line {
+        font-size: 1.05rem;
+      }
+
+      .skill-label {
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin-right: 8px;
+      }
+
+      .skill-list {
+        color: #333;
+      }
+
+      /* --- EXPERIENCE --- */
+      .exp-item {
+        margin-bottom: 20px;
       }
 
       .exp-header {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 10px;
+        align-items: baseline;
+        margin-bottom: 4px;
       }
 
       .exp-role {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-size: 1.15rem;
-        color: var(--primary-dark);
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #000;
       }
 
       .exp-company {
-        color: var(--accent);
-        font-weight: 500;
-        font-size: 0.95rem;
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--primary-dark);
+        margin-right: auto;
+        padding-left: 10px;
       }
 
       .exp-date {
-        font-size: 0.8rem;
-        color: var(--text-dark);
-        font-weight: 600;
-        background: #f3f4f6;
-        padding: 4px 10px;
-        border-radius: 20px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        color: #000;
         white-space: nowrap;
       }
 
-      .exp-details {
-        list-style: none;
+      .exp-bullets {
+        margin-left: 18px;
+        margin-top: 5px;
       }
 
-      .exp-details li {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        margin-bottom: 8px;
-        padding-left: 20px;
-        position: relative;
+      .exp-bullets li {
+        margin-bottom: 4px;
+        padding-left: 5px;
       }
 
-      .exp-details li::before {
-        content: "•";
-        color: var(--accent);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-        font-size: 1.2rem;
-        line-height: 1.4rem;
+      .exp-bullets li::marker {
+        color: var(--accent); /* Subtle branding */
+        font-size: 0.8em;
       }
 
-      /* Improved Projects Grid */
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 25px;
-      }
-
-      .project-card {
-        background: #fff;
-        border: 1px solid var(--border-light);
-        border-radius: 12px;
-        padding: 20px;
-        transition: all 0.3s ease;
-        position: relative;
-        top: 0;
-      }
-
-      .project-card:hover {
-        top: -5px;
-        border-color: var(--accent);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+      /* --- PROJECTS (Clean List View) --- */
+      .project-item {
+        margin-bottom: 15px;
       }
 
       .project-header {
-        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
       }
 
       .project-title {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        color: var(--primary-dark);
+        font-weight: 700;
         font-size: 1.05rem;
-        margin-bottom: 5px;
       }
 
       .project-tech {
-        font-size: 0.7rem;
-        color: var(--accent);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        background: #fff7ed; /* Very light orange tint */
-        padding: 3px 8px;
-        border-radius: 4px;
-        display: inline-block;
-      }
-
-      .project-desc {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        margin-bottom: 12px;
-        line-height: 1.5;
-      }
-
-      .project-impact {
-        font-size: 0.85rem;
-        color: var(--text-dark);
-        padding-top: 10px;
-        border-top: 1px solid #f1f5f9;
+        font-family: "Inter", sans-serif;
+        font-size: 0.8rem;
+        color: var(--primary-dark);
         font-weight: 500;
       }
 
-      /* Mobile Optimizations */
-      @media screen and (max-width: 850px) {
+      .project-desc {
+        margin-top: 2px;
+      }
+
+      /* --- UTILS --- */
+      .download-link {
+        display: block;
+        text-align: center;
+        margin-top: 40px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        color: var(--primary-dark);
+        text-decoration: none;
+        border: 1px solid var(--primary-dark);
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 8px 20px;
+        border-radius: 4px;
+        transition: all 0.2s;
+      }
+
+      .download-link:hover {
+        background: var(--primary-dark);
+        color: #fff;
+      }
+
+      @media screen and (max-width: 768px) {
         .page-container {
-          grid-template-columns: 1fr;
-          margin: 15px; /* Better margin on mobile */
-          width: auto;
-          border-radius: 15px;
+          padding: 30px 20px;
         }
-
-        .sidebar {
-          padding: 40px 30px;
-          align-items: center;
-          text-align: center;
-        }
-
-        .contact-section,
-        .sidebar div {
-          width: 100%;
-          align-items: center; /* Center align items on mobile sidebar */
-        }
-
-        /* Center tags on mobile */
-        .tags {
-          justify-content: center;
-        }
-
-        .edu-item {
-          text-align: left; /* Keep edu text left aligned inside the centered block */
-          align-self: stretch;
-        }
-
-        .main-content {
-          padding: 40px 25px; /* More breathing space than before */
-        }
-
-        .exp-header {
+        .header-top {
           flex-direction: column;
-          gap: 5px;
+        }
+        .exp-header, .edu-block {
+          flex-direction: column;
+        }
+        .exp-company {
+          padding-left: 0;
         }
       }
 
       @media print {
-        body {
-          background: white;
-        }
-        .page-container {
-          margin: 0;
-          box-shadow: none;
-          max-width: 100%;
-          grid-template-columns: 280px 1fr;
-          border-radius: 0;
-          min-height: auto;
-        }
-        .sidebar {
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-          padding: 30px;
-        }
-        .download-btn {
-          display: none;
-        }
-        .project-card {
-          border: 1px solid #ddd;
-          break-inside: avoid;
-        }
+        body { padding: 0; background: white; }
+        .page-container { box-shadow: none; padding: 0; width: 100%; max-width: 100%; }
+        .download-link { display: none; }
       }
     </style>
   </head>
   <body>
     <div class="page-container">
-      <!-- LEFT SIDEBAR -->
-      <aside class="sidebar">
-        <div class="profile-img-container">
+      <!-- Header -->
+      <header>
+        <div class="header-top">
+          <!-- Small Photo Preserved -->
           <img
             src="https://raw.githubusercontent.com/lakshaykumarkashyap/lakshaykumarkashyap/0574ad0d76020975c782c4236820b8f5227a20cc/new-pic-cropped.png"
-            alt="Lakshay Kumar Kashyap"
+            alt="Profile"
             class="profile-img"
           />
-        </div>
-
-        <!-- Download Button Moved Here -->
-        <a href="lakshay-kashyap-resume.pdf" class="download-btn">
-          <i class="fa-solid fa-download" style="margin-right: 8px"></i>Download
-          CV
-        </a>
-
-        <!-- Contact -->
-        <div class="contact-section">
-          <div class="section-title-sidebar">Contact</div>
-          <a
-            href="mailto:lakshaykumarkashyap.work@protonmail.com"
-            class="contact-item"
-          >
-            <i class="fa-solid fa-envelope"></i>
-            <span>Email Me</span>
-          </a>
-          <a href="tel:+916239484065" class="contact-item">
-            <i class="fa-solid fa-phone"></i>
-            <span>+91-6239484065</span>
-          </a>
-          <div class="contact-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>Mohali, Punjab</span>
+          <div>
+            <h1>Lakshay Kumar Kashyap</h1>
+            <span class="job-title">Full Stack MERN Developer</span>
           </div>
-          <a
-            href="https://www.linkedin.com/in/lakshaykumarkashyap/"
-            target="_blank"
-            class="contact-item"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-            <span>LinkedIn</span>
-          </a>
-          <a
-            href="https://github.com/lakshaykumarkashyap"
-            target="_blank"
-            class="contact-item"
-          >
-            <i class="fa-brands fa-github"></i>
-            <span>GitHub</span>
-          </a>
-          <a
-            href="https://lakshaykumarkashyap.my.canva.site/"
-            target="_blank"
-            class="contact-item"
-          >
-            <i class="fa-solid fa-globe"></i>
-            <span>Portfolio</span>
-          </a>
         </div>
 
-        <!-- Education -->
-        <div style="width: 100%">
-          <div class="section-title-sidebar">Education</div>
-          <div class="edu-item">
-            <div class="edu-degree">B.Tech (Computer Science)</div>
+        <div class="contact-row">
+          <a href="mailto:lakshaykumarkashyap.work@protonmail.com" class="contact-item">
+            lakshaykumarkashyap.work@protonmail.com
+          </a>
+          <span class="separator">|</span>
+          <a href="tel:+916239484065" class="contact-item">+91-6239484065</a>
+          <span class="separator">|</span>
+          <span class="contact-item">Mohali, Punjab</span>
+          <span class="separator">|</span>
+          <a href="https://www.linkedin.com/in/lakshaykumarkashyap/" target="_blank" class="contact-item">LinkedIn</a>
+          <span class="separator">|</span>
+          <a href="https://github.com/lakshaykumarkashyap" target="_blank" class="contact-item">GitHub</a>
+          <span class="separator">|</span>
+          <a href="https://lakshaykumarkashyap.my.canva.site/" target="_blank" class="contact-item">Portfolio</a>
+        </div>
+      </header>
+
+      <!-- Education (Moved to top for Academic focus) -->
+      <section>
+        <div class="section-title">Education</div>
+        <div class="edu-block">
+          <div>
             <div class="edu-school">IKGPTU Mohali Campus-1</div>
-            <div class="edu-year" style="color: #94a3b8; font-size: 0.8rem">
-              2021 – 2025 | 7.5 CGPA
-            </div>
+            <div class="edu-details">Bachelor of Technology in Computer Science (7.5 CGPA)</div>
+          </div>
+          <div class="edu-date">2021 – 2025</div>
+        </div>
+      </section>
+
+      <!-- Technical Skills (Reformatted to text lines) -->
+      <section>
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-container">
+          <div class="skill-line">
+            <span class="skill-label">Frontend:</span>
+            <span class="skill-list">React.js, Next.js, TypeScript, Tailwind CSS, Ant Design</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-label">Backend:</span>
+            <span class="skill-list">Node.js, Nest.js, Microservices Architecture, Web Security</span>
+          </div>
+          <div class="skill-line">
+            <span class="skill-label">Tools & Infrastructure:</span>
+            <span class="skill-list">MongoDB, PostgreSQL, Docker, Git, CI/CD Pipelines</span>
           </div>
         </div>
+      </section>
 
-        <!-- Skills -->
-        <div style="width: 100%">
-          <div class="section-title-sidebar">Technical Skills</div>
-
-          <div class="skill-group">
-            <h4>Frontend</h4>
-            <div class="tags">
-              <span class="tag">React.js</span>
-              <span class="tag">Next.js</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Tailwind</span>
-              <span class="tag">Ant Design</span>
-            </div>
+      <!-- Experience -->
+      <section>
+        <div class="section-title">Professional Experience</div>
+        
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-role">Full Stack Developer</span>
+            <span class="exp-company">RG STARTUP Web Solutions</span>
+            <span class="exp-date">Feb 2025 – Present</span>
           </div>
-
-          <div class="skill-group">
-            <h4>Backend</h4>
-            <div class="tags">
-              <span class="tag">Node.js</span>
-              <span class="tag">Nest.js</span>
-              <span class="tag">Microservices</span>
-              <span class="tag">Security</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <h4>Tools</h4>
-            <div class="tags">
-              <span class="tag">MongoDB</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Git</span>
-              <span class="tag">CI/CD</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certifications -->
-        <div style="width: 100%">
-          <div class="section-title-sidebar">Certifications</div>
-          <div class="edu-item">
-            <div class="edu-degree">Cybersecurity Certification</div>
-            <div class="edu-school">Solitaire Infosys</div>
-            <div class="edu-year" style="color: #94a3b8; font-size: 0.8rem">
-              Server Hardening & Web Security
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <!-- MAIN CONTENT -->
-      <main class="main-content">
-        <header>
-          <h1>Lakshay Kumar Kashyap</h1>
-          <!-- Updated Crisp Headline -->
-          <div class="job-title">
-            Full Stack MERN Developer | AI & Scalable Web Solutions
-          </div>
-
-          <p class="summary">
-            Full-Stack Developer delivering scalable, AI-driven, and secure web
-            applications. Skilled in React.js, Next.js, and TypeScript with
-            exposure to microservices and DevOps. Proven ability to translate
-            business needs into high-performance digital solutions and drive
-            end-to-end product execution.
-          </p>
-        </header>
-
-        <!-- Professional Experience -->
-        <section>
-          <div class="section-title">
-            <i class="fa-solid fa-briefcase"></i> Experience
-          </div>
-
-          <div class="experience-item">
-            <div class="exp-header">
-              <div>
-                <div class="exp-role">Full Stack Developer</div>
-                <div class="exp-company">RG STARTUP Web Solutions</div>
-              </div>
-              <div class="exp-date">Feb 2025 – Present</div>
-            </div>
-            <ul class="exp-details">
-              <li>
-                Developing high-performance web apps using MERN Stack, Next.js,
-                and Nest.js; improving API response times by 25%.
-              </li>
-              <li>
-                Optimizing CI/CD pipelines and reusable UI components to
-                accelerate delivery by 30%.
-              </li>
-              <li>
-                Collaborating with clients to translate business needs into
-                scalable architecture.
-              </li>
-              <li>
-                Integrating Gemini AI to automate workflows and provide
-                predictive insights.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Projects -->
-        <section>
-          <div class="section-title">
-            <i class="fa-solid fa-code"></i> Key Projects
-          </div>
-          <div class="projects-grid">
-            <div class="project-card">
-              <div class="project-header">
-                <div class="project-title">
-                  Fyers Live Option Insight Engine
-                </div>
-                <span class="project-tech">Socket.io, Fyers API</span>
-              </div>
-              <div class="project-desc">
-                Real-time stock market option data analysis tool integrating
-                dynamic visualization, socket streaming, and analysis formulas.
-              </div>
-              <div class="project-impact">
-                Result: Enabled instant data-driven trading decisions.
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <div class="project-title">
-                  Jobish - AI Career Consultation
-                </div>
-                <span class="project-tech">Next.js, Gemini AI</span>
-              </div>
-              <div class="project-desc">
-                AI-powered platform for career consultation. Implemented ATS
-                Resume Analysis, Gemini AI workflow automation, and Razorpay
-                integration.
-              </div>
-              <div class="project-impact">
-                Result: Boosted conversions via automation and personalized UX.
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <div class="project-title">Ask Me Quick - Business Directory</div>
-                <span class="project-tech">Next.js & Supabase</span>
-              </div>
-              <div class="project-desc">
-                Local business directory where professionals can create digital
-                profiles, manage services, and enhance business visibility.
-              </div>
-              <div class="project-impact">
-                Result: Increased local engagement by 45%.
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="project-header">
-                <div class="project-title">Digital Marketing Profile</div>
-                <span class="project-tech">Next.js + Headless WP</span>
-              </div>
-              <div class="project-desc">
-                SEO-optimized personal branding website with interactive
-                animations and blog CMS using headless WordPress.
-              </div>
-              <div class="project-impact">
-                Result: Strengthened client’s online presence and lead
-                generation.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Achievements -->
-        <section>
-          <div class="section-title">
-            <i class="fa-solid fa-trophy"></i> Achievements
-          </div>
-          <ul class="exp-details">
-            <li>
-              <strong>Major College Project:</strong> Led team to build
-              "Busease" (Booking App), achieving 95% feature completion.
-            </li>
-            <li>
-              <strong>Professional Musician:</strong> Lead Guitarist, performed
-              at 5+ events (Melodiosa Season 6).
-            </li>
-            <li>
-              <strong>Chess Runner-up:</strong> 2nd position in inter-school
-              competition.
-            </li>
+          <ul class="exp-bullets">
+            <li>Developing high-performance web applications using MERN Stack, Next.js, and Nest.js, resulting in a 25% improvement in API response times.</li>
+            <li>Optimizing CI/CD pipelines and creating reusable UI components to accelerate feature delivery by 30%.</li>
+            <li>Collaborating directly with clients to translate complex business requirements into scalable, secure architecture.</li>
+            <li>Integrating Gemini AI to automate internal workflows and provide predictive insights for user data.</li>
           </ul>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section>
+        <div class="section-title">Key Projects</div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-title">Fyers Live Option Insight Engine</span>
+            <span class="project-tech">Socket.io, Fyers API</span>
+          </div>
+          <div class="project-desc">
+            Built a real-time stock market option data analysis tool integrating dynamic visualization and socket streaming. Enabled instant data-driven trading decisions for users.
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-title">Jobish - AI Career Consultation</span>
+            <span class="project-tech">Next.js, Gemini AI</span>
+          </div>
+          <div class="project-desc">
+            Developed an AI-powered platform for career consultation featuring ATS Resume Analysis and workflow automation. Successfully boosted conversion rates via personalized UX.
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-title">Ask Me Quick - Business Directory</span>
+            <span class="project-tech">Supabase, Next.js</span>
+          </div>
+          <div class="project-desc">
+            Created a local business directory allowing professionals to manage services and profiles. Increased local engagement metrics by 45%.
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-title">Digital Marketing Profile</span>
+            <span class="project-tech">Headless WordPress</span>
+          </div>
+          <div class="project-desc">
+            Designed an SEO-optimized personal branding website with a headless CMS backend, significantly strengthening the client’s online presence.
+          </div>
+        </div>
+      </section>
+
+      <!-- Additional Sections -->
+      <section>
+        <div class="section-title">Certifications & Achievements</div>
+        <ul class="exp-bullets">
+          <li><strong>Cybersecurity Certification:</strong> Solitaire Infosys (Server Hardening & Web Security).</li>
+          <li><strong>Major College Project:</strong> Led team to build "Busease" (Booking App), achieving 95% feature completion.</li>
+          <li><strong>Leadership & Arts:</strong> Lead Guitarist for 5+ events; Runner-up in inter-school Chess competition.</li>
+        </ul>
+      </section>
+
+      <!-- Footer Action -->
+      <a href="lakshay-kashyap-resume.pdf" class="download-link">
+        <i class="fa-solid fa-download"></i> Download Resume PDF
+      </a>
     </div>
   </body>
 </html>
